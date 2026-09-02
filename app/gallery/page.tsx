@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const placeholders = [
   "training-01",
   "training-02",
@@ -12,9 +14,9 @@ const placeholders = [
 
 function Tile({ label }: { label: string }) {
   return (
-    <div className="group relative aspect-[4/3] border hairline bg-raised overflow-hidden">
-      <div className="absolute inset-0 texture-canvas" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted">
+    <div className="group relative aspect-[4/3] border hairline bg-raised overflow-hidden transition-colors duration-300 hover:border-brass">
+      <div className="absolute inset-0 texture-canvas transition-transform duration-500 group-hover:scale-110" />
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted transition-colors duration-300 group-hover:text-ink">
         <svg
           width="28"
           height="28"
@@ -23,6 +25,7 @@ function Tile({ label }: { label: string }) {
           stroke="currentColor"
           strokeWidth="1.2"
           aria-hidden="true"
+          className="transition-transform duration-500 group-hover:scale-110"
         >
           <rect x="3" y="5" width="18" height="14" rx="1" />
           <circle cx="9" cy="10" r="1.5" />
@@ -50,8 +53,10 @@ export default function GalleryPage() {
       </p>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {placeholders.map((p) => (
-          <Tile key={p} label={p} />
+        {placeholders.map((p, i) => (
+          <Reveal key={p} delay={(i % 3) * 80}>
+            <Tile label={p} />
+          </Reveal>
         ))}
       </div>
     </section>

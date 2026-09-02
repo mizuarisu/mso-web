@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const roster = [
   { rank: "[RANK]", name: "[NAME]", role: "Commanding Officer" },
   { rank: "[RANK]", name: "[NAME]", role: "Deputy Commanding Officer" },
@@ -9,7 +11,7 @@ const roster = [
 
 function Portrait() {
   return (
-    <div className="aspect-[3/4] w-full bg-raised border hairline flex items-center justify-center">
+    <div className="aspect-[3/4] w-full bg-raised border hairline flex items-center justify-center overflow-hidden">
       <svg
         width="40%"
         height="40%"
@@ -18,6 +20,7 @@ function Portrait() {
         stroke="#3A3F2E"
         strokeWidth="1"
         aria-hidden="true"
+        className="transition-transform duration-500 group-hover:scale-110"
       >
         <circle cx="12" cy="8" r="4" />
         <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
@@ -39,17 +42,19 @@ export default function ChainOfCommandPage() {
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {roster.map((r) => (
-          <div key={r.role} className="border hairline bg-surface/40">
-            <Portrait />
-            <div className="p-5">
-              <p className="font-display text-xs tracking-widest2 text-brass mb-1">
-                {r.rank}
-              </p>
-              <h3 className="font-display text-lg mb-1">{r.name}</h3>
-              <p className="text-muted text-sm">{r.role}</p>
+        {roster.map((r, i) => (
+          <Reveal key={r.role} delay={i * 80}>
+            <div className="group border hairline bg-surface/40 transition-all duration-300 hover:border-brass hover:-translate-y-1">
+              <Portrait />
+              <div className="p-5">
+                <p className="font-display text-xs tracking-widest2 text-brass mb-1">
+                  {r.rank}
+                </p>
+                <h3 className="font-display text-lg mb-1">{r.name}</h3>
+                <p className="text-muted text-sm">{r.role}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

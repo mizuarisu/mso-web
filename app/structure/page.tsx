@@ -1,4 +1,5 @@
 import { site } from "@/lib/config";
+import Reveal from "@/components/Reveal";
 
 const tree = [
   {
@@ -60,26 +61,28 @@ export default function StructurePage() {
 
       <div className="space-y-16">
         {tree.map((tier, i) => (
-          <div key={tier.tier} className="relative pl-8">
-            <div className="absolute left-0 top-1 bottom-0 w-px bg-line" />
-            <div className="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-brass" />
-            <p className="font-display text-xs tracking-widest2 text-muted mb-6">
-              {String(i + 1).padStart(2, "0")} &mdash; {tier.tier}
-            </p>
-            <div className="grid sm:grid-cols-3 gap-6">
-              {tier.units.map((u) => (
-                <div
-                  key={u.name}
-                  className="border hairline p-6 bg-surface/40"
-                >
-                  <h3 className="font-display text-base mb-2">{u.name}</h3>
-                  <p className="text-muted text-sm leading-relaxed">
-                    {u.role}
-                  </p>
-                </div>
-              ))}
+          <Reveal key={tier.tier} delay={i * 100}>
+            <div className="relative pl-8">
+              <div className="absolute left-0 top-1 bottom-0 w-px bg-line" />
+              <div className="absolute left-[-4px] top-0 w-2 h-2 rounded-full bg-brass" />
+              <p className="font-display text-xs tracking-widest2 text-muted mb-6">
+                {String(i + 1).padStart(2, "0")} &mdash; {tier.tier}
+              </p>
+              <div className="grid sm:grid-cols-3 gap-6">
+                {tier.units.map((u) => (
+                  <div
+                    key={u.name}
+                    className="border hairline p-6 bg-surface/40 transition-all duration-300 hover:border-brass hover:-translate-y-1"
+                  >
+                    <h3 className="font-display text-base mb-2">{u.name}</h3>
+                    <p className="text-muted text-sm leading-relaxed">
+                      {u.role}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

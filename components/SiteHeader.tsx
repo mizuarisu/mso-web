@@ -14,7 +14,9 @@ export default function SiteHeader() {
     <header className="border-b hairline bg-bg/95 backdrop-blur sticky top-0 z-40">
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 group">
-          <Crest size={40} />
+          <div className="transition-transform duration-500 ease-out group-hover:rotate-[15deg]">
+            <Crest size={40} />
+          </div>
           <div className="leading-tight">
             <div className="font-display text-ink text-lg tracking-wide">
               {site.shortName}
@@ -29,7 +31,7 @@ export default function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-display text-sm tracking-wide text-muted hover:text-ink transition-colors"
+              className="relative font-display text-sm tracking-wide text-muted hover:text-ink transition-colors after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-brass after:transition-all after:duration-300 hover:after:w-full"
             >
               {l.label}
             </Link>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Crest from "@/components/Crest";
+import Reveal from "@/components/Reveal";
 import { site } from "@/lib/config";
 
 const capabilities = [
@@ -26,8 +27,10 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden texture-canvas border-b hairline">
         <div className="mx-auto max-w-6xl px-6 py-24 grid md:grid-cols-[auto_1fr] gap-12 items-center">
-          <Crest size={140} />
-          <div>
+          <div className="animate-hero">
+            <Crest size={140} />
+          </div>
+          <div className="animate-hero" style={{ animationDelay: "150ms" }}>
             <p className="font-display text-brass tracking-widest2 text-xs mb-4">
               {site.motto} &middot; {site.mottoTranslation}
             </p>
@@ -40,13 +43,13 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/structure"
-                className="font-display text-sm tracking-wide bg-brass text-bg px-6 py-3 hover:bg-ink transition-colors"
+                className="font-display text-sm tracking-wide bg-brass text-bg px-6 py-3 transition-all duration-300 hover:bg-ink hover:-translate-y-0.5"
               >
                 View unit structure
               </Link>
               <Link
                 href="/chain-of-command"
-                className="font-display text-sm tracking-wide border hairline px-6 py-3 text-ink hover:border-brass transition-colors"
+                className="font-display text-sm tracking-wide border hairline px-6 py-3 text-ink transition-all duration-300 hover:border-brass hover:-translate-y-0.5"
               >
                 Chain of command
               </Link>
@@ -55,31 +58,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 grid md:grid-cols-[1fr_2fr] gap-12">
-        <div>
-          <h2 className="font-display text-2xl mb-3">Mission</h2>
-          <div className="h-px w-16 bg-brass mb-6" />
-        </div>
-        <p className="text-ink/90 leading-relaxed max-w-2xl">
-          {site.unitName} organizes, trains, and equips special operations
-          forces for employment worldwide in support of theater and national
-          objectives. The command sets the standard for readiness, discipline,
-          and coordinated action across every element under its structure.
-          Established {site.established} under {site.higherHeadquarters}, the
-          command is headquartered at {site.homeStation}.
-        </p>
-      </section>
+      <Reveal>
+        <section className="mx-auto max-w-6xl px-6 py-20 grid md:grid-cols-[1fr_2fr] gap-12">
+          <div>
+            <h2 className="font-display text-2xl mb-3">Mission</h2>
+            <div className="h-px w-16 bg-brass mb-6" />
+          </div>
+          <p className="text-ink/90 leading-relaxed max-w-2xl">
+            {site.unitName} organizes, trains, and equips special operations
+            forces for employment worldwide in support of theater and
+            national objectives. The command sets the standard for readiness,
+            discipline, and coordinated action across every element under its
+            structure. Established {site.established} under{" "}
+            {site.higherHeadquarters}, the command is headquartered at{" "}
+            {site.homeStation}.
+          </p>
+        </section>
+      </Reveal>
 
       <section className="border-t hairline">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="font-display text-2xl mb-3">Core capabilities</h2>
-          <div className="h-px w-16 bg-brass mb-10" />
+          <Reveal>
+            <h2 className="font-display text-2xl mb-3">Core capabilities</h2>
+            <div className="h-px w-16 bg-brass mb-10" />
+          </Reveal>
           <div className="grid sm:grid-cols-2 gap-px bg-line">
-            {capabilities.map((c) => (
-              <div key={c.title} className="bg-bg p-8">
-                <h3 className="font-display text-lg mb-2">{c.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{c.body}</p>
-              </div>
+            {capabilities.map((c, i) => (
+              <Reveal key={c.title} delay={i * 80}>
+                <div className="bg-bg p-8 h-full transition-all duration-300 hover:bg-surface hover:-translate-y-1">
+                  <h3 className="font-display text-lg mb-2">{c.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {c.body}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
