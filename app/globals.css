@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #14170f;
+  color: #e9e4d4;
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: #9c8748;
+  color: #14170f;
+}
+
+/* Subtle woven-canvas texture used behind panels, not photography */
+.texture-canvas {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(233, 228, 212, 0.025) 0px,
+      rgba(233, 228, 212, 0.025) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+}
+
+.hairline {
+  border-color: #3a3f2e;
+}
+
+:focus-visible {
+  outline: 2px solid #9c8748;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
