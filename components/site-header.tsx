@@ -26,7 +26,7 @@ export function SiteHeader() {
     <div className="header-inner">
       <Link href="/" className="header-brand" onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>
         <span className="header-emblem"><img src="/images/division-emblem.webp" alt="" /></span>
-        <span><b>VANGUARD</b><small> SPECIAL OPERATIONS DIVISION</small></span>
+        <span><b>MARINE</b><small> SPECIAL OPERATIONS</small></span>
       </Link>
       <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><i /><i /><i /></button>
       <nav className={menuOpen ? 'header-nav open' : 'header-nav'} aria-label="Main navigation">

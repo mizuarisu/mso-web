@@ -25,9 +25,9 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
     {loading && <div className="tactical-loader" role="status" aria-label="Loading Vanguard archive">
       <div className="loader-grid" aria-hidden="true" />
       <div className="loader-frame">
-        <div className="loader-topline"><span>VANGUARD // ARCHIVE</span><span>SECURE LINK</span></div>
+        <div className="loader-topline"><span>MSO // WEBSITE</span><span>SECURE LINK</span></div>
         <img src="/images/division-emblem.webp" alt="Vanguard division emblem" />
-        <div className="loader-wordmark">INITIALIZING<br /><em>OPERATIONS</em></div>
+        <div className="loader-wordmark">INITIALIZING<br /><em>WEBSITE</em></div>
         <div className="loader-progress"><span /><span /><span /><span /><span /><span /></div>
         <div className="loader-progress-line"><i /></div>
         <p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p>

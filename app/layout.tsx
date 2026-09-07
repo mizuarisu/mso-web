@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Vanguard Special Operations | Fictional Roleplay Division',
-  description: 'A fictional special operations division built around discipline, discretion, and decisive action.',
+  title: 'Marine Special Operations | CUSA',
+  description: 'Special Operations for the CUSA Marine Corps.',
   generator: 'v0.app',
   icons: {
     icon: [
