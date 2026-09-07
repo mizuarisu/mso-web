@@ -9,9 +9,13 @@ export const galleryItems = [
 ]
 
 export const divisions = [
-  { code: '01', name: 'RAVEN GROUP', role: 'DIRECT ACTION', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
-  { code: '02', name: 'SABLE WING', role: 'AVIATION', text: 'Rotary-wing insertion, extraction, and air mobility for the full spectrum fight.' },
-  { code: '03', name: 'ECHO CELL', role: 'INTELLIGENCE', text: 'Persistent collection and analysis turning fragments into operational advantage.' },
+  { code: '01', name: '1ST ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
+  { code: '02', name: '2ND ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
+  { code: '03', name: '3RD ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
+  { code: '04', name: '[REDACTED]', role: 'REDACTED', text: 'INFORMATION CANNOT BE DISTRIBUTED.' },
+  { code: '05', name: 'ORLEANS COMPANY', role: 'MILSIM', text: 'Composed primarily of experienced operators to execute advanced operations.' },
+  { code: '06', name: 'STALLION COMPANY', role: 'MILSIM', text: 'The primary development company where operators build experience, improve tactical skills, and prepare for more advanced deployments.' },
+  { code: '07', name: 'CONFLICT PROJECT', role: 'INDEPENDENT', text: 'A military and contracting company work among the Marine Special Operations. ' },
 ]
 
 const updates = [
