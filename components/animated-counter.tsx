@@ -3,16 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 
 export function AnimatedCounter({ value, suffix = '', duration = 1400 }: { value: number; suffix?: string; duration?: number }) {
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState(value)
   const ref = useRef<HTMLSpanElement>(null)
   const [started, setStarted] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setStarted(true)
-        observer.disconnect()
-      }
+      setStarted(entry.isIntersecting)
+      if (!entry.isIntersecting) setDisplay(value)
     }, { threshold: 0.4 })
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()

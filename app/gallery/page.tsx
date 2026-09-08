@@ -1,3 +1,3 @@
-import { TacticalShell } from '@/components/tactical-shell'
-import { GalleryContent } from '@/components/route-content'
-export default function GalleryPage() { return <TacticalShell><GalleryContent /></TacticalShell> }
+import { redirect } from 'next/navigation'
+
+export default function GalleryPage() { redirect('/#gallery') }

@@ -1,6 +1,3 @@
-import { TacticalShell } from '@/components/tactical-shell'
-import { HonoraryContent } from '@/components/honorary-content'
+import { redirect } from 'next/navigation'
 
-export default function HonoraryPage() {
-  return <TacticalShell><HonoraryContent /></TacticalShell>
-}
+export default function HonoraryPage() { redirect('/#honorary') }
