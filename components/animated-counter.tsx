@@ -9,10 +9,8 @@ export function AnimatedCounter({ value, suffix = '', duration = 1400 }: { value
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setStarted(true)
-        observer.disconnect()
-      }
+      setStarted(entry.isIntersecting)
+      if (!entry.isIntersecting) setDisplay(0)
     }, { threshold: 0.4 })
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()

@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 const links = [
-  ['HOME', '/'], ['DIVISIONS', '/divisions'], ['COMMAND', '/command'], ['GALLERY', '/gallery'], ['UPDATES', '/updates'], ['HONORARY', '/honorary'], ['ACCESS', '/access'],
+  ['HOME', '#top'], ['DIVISIONS', '#divisions'], ['COMMAND', '#command'], ['GALLERY', '#gallery'], ['UPDATES', '#updates'], ['HONORARY', '#honorary'], ['ACCESS', '#access'],
 ]
 
 export function SiteHeader() {
+  const pathname = usePathname()
   const [progress, setProgress] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -30,7 +32,7 @@ export function SiteHeader() {
       </Link>
       <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><i /><i /><i /></button>
       <nav className={menuOpen ? 'header-nav open' : 'header-nav'} aria-label="Main navigation">
-        {links.map(([label, href]) => <Link key={href} href={href} onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>{label}</Link>)}
+        {links.map(([label, href]) => <Link key={href} href={pathname === '/' ? href : `/${href}`} onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>{label}</Link>)}
         <Link className="admin-link" href="/settings" onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>ADMIN</Link>
       </nav>
     </div>
