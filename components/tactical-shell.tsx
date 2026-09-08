@@ -21,7 +21,7 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
   }, [showLoader])
 
   return <SiteLayout>
-    {loading && <div className="tactical-loader" role="status" aria-label="Loading Vanguard archive"><div className="loader-grid" aria-hidden="true" /><div className="loader-frame"><div className="loader-topline"><span>MSO // WEBSITE</span><span>SECURE LINK</span></div><div className="loader-status"><span className="loader-status-dot" />{status}</div><div className="loader-progress"><span /><span /><span /><span /><span /><span /></div><div className="loader-progress-line"><i /></div><p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p></div></div>}
+    {loading && <div className="tactical-loader" role="status" aria-label="Loading Vanguard archive"><div className="loader-grid" aria-hidden="true" /><div className="loader-frame"><div className="loader-topline"><span>MSO // WEBSITE</span><span>SECURE LINK</span></div><img className="loader-emblem" src="/images/division-emblem.webp" alt="Marine Special Operations emblem" /><div className="loader-status"><span className="loader-status-dot" />{status}</div><div className="loader-progress"><span /><span /><span /><span /><span /><span /></div><div className="loader-progress-line"><i /></div><p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p></div></div>}
     <div className="noise" aria-hidden="true" />
     {children}
   </SiteLayout>

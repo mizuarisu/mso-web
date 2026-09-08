@@ -1,3 +1,3 @@
-import { TacticalShell } from '@/components/tactical-shell'
-import { UpdatesContent } from '@/components/route-content'
-export default function UpdatesPage() { return <TacticalShell><UpdatesContent /></TacticalShell> }
+import { redirect } from 'next/navigation'
+
+export default function UpdatesPage() { redirect('/#updates') }

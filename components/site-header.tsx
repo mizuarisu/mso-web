@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  ['HOME', '#top'], ['DIVISIONS', '#divisions'], ['COMMAND', '#command'], ['GALLERY', '#gallery'], ['UPDATES', '#updates'], ['HONORARY', '#honorary'], ['ACCESS', '#access'],
+  ['HOME', '#top'], ['ABOUT US', '#about'], ['DIVISIONS', '#divisions'], ['COMMAND', '#command'], ['GALLERY', '#gallery'], ['UPDATES', '#updates'], ['HONORARY', '#honorary'], ['ACCESS', '#access'],
 ]
 
 export function SiteHeader() {

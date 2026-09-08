@@ -1,3 +1,3 @@
-import { TacticalShell } from '@/components/tactical-shell'
-import { AboutContent } from '@/components/route-content'
-export default function AboutPage() { return <TacticalShell><AboutContent /></TacticalShell> }
+import { redirect } from 'next/navigation'
+
+export default function AboutPage() { redirect('/#about') }
