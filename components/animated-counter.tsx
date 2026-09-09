@@ -31,5 +31,5 @@ export function AnimatedCounter({ value, suffix = '', duration = 1400 }: { value
     return () => cancelAnimationFrame(frame)
   }, [started, value, duration])
 
-  return <span ref={ref}>{display.toLocaleString()}{suffix}</span>
+  return <span ref={ref}>{display.toLocaleString('en-US')}{suffix}</span>
 }

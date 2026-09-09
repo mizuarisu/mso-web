@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { TacticalShell, SectionKicker } from '@/components/tactical-shell'
 import { divisions, galleryItems } from '@/components/route-content'
 import { AnimatedCounter } from '@/components/animated-counter'
@@ -9,21 +12,23 @@ const updates = [
   ['04.08.26', 'THE STANDARD: WHY WE TRAIN IN THE DARK', 'A doctrine note on discomfort, clarity, and decisive action.'],
 ]
 
-async function getRobloxMemberCount() {
-  try {
-    const response = await fetch('https://groups.roblox.com/v1/groups/156700841', { next: { revalidate: 900 } })
-    const data = await response.json()
-    return typeof data.memberCount === 'number' ? data.memberCount : 38
-  } catch { return 38 }
-}
-
 function Stat({ value, label, prefix = '', suffix = '', duration }: { value: number; label: string; prefix?: string; suffix?: string; duration?: number }) {
   return <div className="stat-block"><b>{prefix}<AnimatedCounter value={value} suffix={suffix} duration={duration} /></b><span>{label}</span></div>
 }
 
-export default async function HomePage() {
-  const memberCount = await getRobloxMemberCount()
-  const activeCells = 8 + Math.floor(Math.random() * 8)
+export default function HomePage() {
+  const [memberCount, setMemberCount] = useState(38)
+  const [activeCells, setActiveCells] = useState(8)
+
+  useEffect(() => {
+    setActiveCells(8 + Math.floor(Math.random() * 8))
+    fetch('https://groups.roblox.com/v1/groups/156700841')
+      .then((response) => response.json())
+      .then((data) => {
+        if (typeof data.memberCount === 'number') setMemberCount(data.memberCount)
+      })
+      .catch(() => {})
+  }, [])
 
   return <TacticalShell showLoader>
     <section id="top" className="hero-section reveal"><div className="hero-image" aria-hidden="true" /><div className="hero-grid" aria-hidden="true" /><div className="hero-content"><p className="eyebrow"><span className="live-dot" /> ACTIVE // EST. 2025 // CLASSIFIED</p><h1>NO WORSE<br /><em>ENEMY.</em></h1><p className="hero-copy">Marine Special Operations is a unit under the United States Marine Corps. A division built around discipline, professional, and decisive action. In the margins, we move first.</p><div className="hero-actions"><a className="button button-primary" href="#about">ABOUT US <span>↗</span></a><a className="text-link" href="#divisions">EXPLORE DIVISIONS <span>↓</span></a></div></div><div className="hero-footer"><span>LAT 38° 53′ 24″ N</span><span>LONG 77° 00′ 32″ W</span><span>OPERATIONAL STATUS: <b>GREEN</b></span><span>SCROLL TO EXPLORE ↓</span></div></section>
