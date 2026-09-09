@@ -23,7 +23,7 @@ function Stat({ value, label, prefix = '', suffix = '', duration }: { value: num
 
 export default async function HomePage() {
   const memberCount = await getRobloxMemberCount()
-  const activeCells = 8 + Math.floor(Math.random() * 8)
+  const activeCells = 12
 
   return <TacticalShell showLoader>
     <section id="top" className="hero-section reveal"><div className="hero-image" aria-hidden="true" /><div className="hero-grid" aria-hidden="true" /><div className="hero-content"><p className="eyebrow"><span className="live-dot" /> ACTIVE // EST. 2025 // CLASSIFIED</p><h1>NO WORSE<br /><em>ENEMY.</em></h1><p className="hero-copy">Marine Special Operations is a unit under the United States Marine Corps. A division built around discipline, professional, and decisive action. In the margins, we move first.</p><div className="hero-actions"><a className="button button-primary" href="#about">ABOUT US <span>↗</span></a><a className="text-link" href="#divisions">EXPLORE DIVISIONS <span>↓</span></a></div></div><div className="hero-footer"><span>LAT 38° 53′ 24″ N</span><span>LONG 77° 00′ 32″ W</span><span>OPERATIONAL STATUS: <b>GREEN</b></span><span>SCROLL TO EXPLORE ↓</span></div></section>
