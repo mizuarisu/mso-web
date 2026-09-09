@@ -5,11 +5,11 @@ import { SiteLayout } from './site-layout'
 
 export function TacticalShell({ children, showLoader = false }: { children: React.ReactNode; showLoader?: boolean }) {
   const [loading, setLoading] = useState(showLoader)
-  const [status, setStatus] = useState('INITIALIZING OPERATIONS')
+  const [status, setStatus] = useState('INITIALIZING WEBSITE')
 
   useEffect(() => {
     if (!showLoader) return
-    const statuses = ['INITIALIZING OPERATIONS', 'VERIFYING SECURE LINK', 'SYNCING FIELD ARCHIVE', 'ESTABLISHING COMMAND NET', 'DONE']
+    const statuses = ['INITIALIZING WEBSITE', 'VERIFYING LINK', 'LOADING ASSETS', 'LOADED.']
     const timers = statuses.map((label, index) => window.setTimeout(() => setStatus(label), index * 560))
     const timer = window.setTimeout(() => setLoading(false), 3200)
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {

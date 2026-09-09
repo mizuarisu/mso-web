@@ -9,12 +9,12 @@ export const galleryItems = [
 ]
 
 export const divisions = [
-  { code: '01', name: '1ST ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
-  { code: '02', name: '2ND ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
-  { code: '03', name: '3RD ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.' },
-  { code: '04', name: '[REDACTED]', role: 'REDACTED', text: 'INFORMATION CANNOT BE DISTRIBUTED.' },
-  { code: '05', name: 'ORLEANS COMPANY', role: 'MILSIM', text: 'Composed primarily of experienced operators to execute advanced operations.' },
-  { code: '06', name: 'STALLION COMPANY', role: 'MILSIM', text: 'The primary development company where operators build experience, improve tactical skills, and prepare for more advanced deployments.' },
+  { code: '01', name: '1ST ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.', icon: '/images/tactical-training.png' },
+  { code: '02', name: '2ND ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.', icon: '/images/tactical-desert.png' },
+  { code: '03', name: '3RD ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.', icon: '/images/tactical-ocean.png' },
+  { code: '04', name: '[REDACTED]', role: 'REDACTED', text: 'INFORMATION CANNOT BE DISTRIBUTED.', icon: '/images/tactical-night.png' },
+  { code: '05', name: 'ORLEANS COMPANY', role: 'MILSIM', text: 'Composed primarily of experienced operators to execute advanced operations.', icon: '/images/tactical-close.png' },
+  { code: '06', name: 'STALLION COMPANY', role: 'MILSIM', text: 'The primary development company where operators build experience, improve tactical skills, and prepare for more advanced deployments.', icon: '/images/tactical-hero.png' },
   { code: '07', name: 'CONFLICT PROJECT', role: 'INDEPENDENT', text: 'A military and contracting company work among the Marine Special Operations. ' },
 ]
 
