@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  ['HOME', '#top'], ['ABOUT US', '#about'], ['DIVISIONS', '#divisions'], ['COMMAND', '#command'], ['GALLERY', '#gallery'], ['UPDATES', '#updates'], ['HONORARY', '#honorary'], ['ACCESS', '#access'],
+  ['HOME', '#top'], ['ABOUT US', '#about'], ['DIVISIONS', '#divisions'], ['COMMAND', '#command'], ['GALLERY', '#gallery'], ['UPDATES', '#updates'], ['HONORARY', '#honorary'],
 ]
 
 export function SiteHeader() {
@@ -33,7 +33,6 @@ export function SiteHeader() {
       <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><i /><i /><i /></button>
       <nav className={menuOpen ? 'header-nav open' : 'header-nav'} aria-label="Main navigation">
         {links.map(([label, href]) => <Link key={href} href={pathname === '/' ? href : `/${href}`} onClick={() => { setMenuOpen(false) }}>{label}</Link>)}
-        <Link className="admin-link" href="/settings" onClick={() => { setMenuOpen(false) }}>ADMIN</Link>
       </nav>
     </div>
     <div className="scroll-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
