@@ -1,6 +1,20 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Roboto, Lora, PT_Sans, Geist, Geist_Mono, DM_Sans, JetBrains_Mono, Fira_Sans, Source_Sans_3, Lato, Open_Sans, Inter } from 'next/font/google'
 import './globals.css'
+
+const roboto = Roboto({ subsets: ['latin'], weight: ['400', '600', '700'] })
+const lora = Lora({ subsets: ['latin'] })
+const ptSans = PT_Sans({ subsets: ['latin'], weight: ['400', '700'] })
+const geist = Geist({ subsets: ['latin'] })
+const geistMono = Geist_Mono({ subsets: ['latin'] })
+const dmSans = DM_Sans({ subsets: ['latin'] })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
+const firaSans = Fira_Sans({ subsets: ['latin'], weight: ['400', '600', '700'] })
+const sourceSans3 = Source_Sans_3({ subsets: ['latin'] })
+const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] })
+const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '700'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Marine Special Operations | CUSA',
