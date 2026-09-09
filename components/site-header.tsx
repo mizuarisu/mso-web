@@ -26,14 +26,14 @@ export function SiteHeader() {
 
   return <header className="site-header">
     <div className="header-inner">
-      <Link href="/" className="header-brand" onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>
+      <Link href="/" className="header-brand" onClick={() => { setMenuOpen(false) }}>
         <span className="header-emblem"><img src="/images/division-emblem.webp" alt="" /></span>
         <span><b>MARINE</b><small> SPECIAL OPERATIONS</small></span>
       </Link>
       <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}><i /><i /><i /></button>
       <nav className={menuOpen ? 'header-nav open' : 'header-nav'} aria-label="Main navigation">
-        {links.map(([label, href]) => <Link key={href} href={pathname === '/' ? href : `/${href}`} onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>{label}</Link>)}
-        <Link className="admin-link" href="/settings" onClick={() => { setMenuOpen(false); window.dispatchEvent(new Event('vanguard:navigation-start')) }}>ADMIN</Link>
+        {links.map(([label, href]) => <Link key={href} href={pathname === '/' ? href : `/${href}`} onClick={() => { setMenuOpen(false) }}>{label}</Link>)}
+        <Link className="admin-link" href="/settings" onClick={() => { setMenuOpen(false) }}>ADMIN</Link>
       </nav>
     </div>
     <div className="scroll-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
