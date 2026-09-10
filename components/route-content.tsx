@@ -6,6 +6,10 @@ export const galleryItems = [
   { title: 'Iron Resolve', category: 'TRAINING', meta: 'CAMP RAVEN', image: '/images/tactical-training.png' },
   { title: 'Desert Signal', category: 'FIELD NOTES', meta: 'JOINT TASKING', image: '/images/tactical-desert.png' },
   { title: 'Black Current', category: 'OPERATIONS', meta: 'ATLANTIC RANGE', image: '/images/tactical-ocean.png' },
+  { title: 'Signal Room', category: 'SIGNALS', meta: 'SECURE CHANNEL', image: '/images/signals-archive.png' },
+  { title: 'Visual Log', category: 'FIELD NOTES', meta: 'ARCHIVE 06', image: '/images/visual-log-archive.png' },
+  { title: 'Briefing Line', category: 'COMMAND', meta: 'CONTROL ROOM', image: '/images/gallery-briefing.png' },
+  { title: 'Night Relay', category: 'SIGNALS', meta: 'RELAY POINT', image: '/images/gallery-signals.png' },
 ]
 
 export const divisions = [
@@ -15,7 +19,7 @@ export const divisions = [
   { code: '04', name: '[REDACTED]', role: 'REDACTED', text: 'INFORMATION CANNOT BE DISTRIBUTED.', icon: '/images/tactical-night.png' },
   { code: '05', name: 'ORLEANS COMPANY', role: 'MILSIM', text: 'Composed primarily of experienced operators to execute advanced operations.', icon: '/images/tactical-close.png' },
   { code: '06', name: 'STALLION COMPANY', role: 'MILSIM', text: 'The primary development company where operators build experience, improve tactical skills, and prepare for more advanced deployments.', icon: '/images/tactical-hero.png' },
-  { code: '07', name: 'CONFLICT PROJECT', role: 'INDEPENDENT', text: 'A military and contracting company work among the Marine Special Operations. ' },
+  { code: '07', name: 'CONFLICT PROJECT', role: 'INDEPENDENT', text: 'A military and contracting company working alongside Marine Special Operations for future operations.', icon: '/images/division-logos.png' },
 ]
 
 const updates = [
