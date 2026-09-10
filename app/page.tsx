@@ -1,5 +1,6 @@
 import { TacticalShell, SectionKicker } from '@/components/tactical-shell'
-import { divisions, galleryItems } from '@/components/route-content'
+import { galleryItems } from '@/components/route-content'
+import { DivisionRail } from '@/components/division-rail'
 import { AnimatedCounter } from '@/components/animated-counter'
 
 const updates = [
@@ -30,7 +31,7 @@ export default async function HomePage() {
 
     <section id="about" className="section-pad paper-section reveal"><SectionKicker number="01" label="THE DIVISION" /><div className="intro-grid"><div><h2>QUIET PROFESSIONALS.<br /><em>LOUD RESULTS.</em></h2></div><div className="intro-copy"><p className="lead">We are not the first line. We are the line that appears when every other line has failed.</p><p>Marine Special Operations emphasizes realism, discipline, and teamwork. Members learn through training, coordination, and progress based on unit.</p><a className="text-link" href="#command">READ OUR DOCTRINE <span>↗</span></a></div></div><div className="stat-row"><Stat value={activeCells} label="ACTIVE CELLS" suffix="+" /><Stat value={memberCount} label="OPERATORS" suffix="+" /><Stat value={100} label="MISSION FOCUS" suffix="%" duration={1100} /><div className="stat-block stat-mark"><b>24/7</b><span>COMBAT READINESS</span></div></div></section>
 
-    <section id="divisions" className="section-pad dark-section reveal"><SectionKicker number="02" label="CAPABILITIES" /><div className="section-heading"><h2>THE <em>EDGE</em> OF THE SPEAR.</h2><a className="text-link" href="#gallery">VIEW FIELD LOG <span>↗</span></a></div><div className="division-rail">{divisions.map((division) => <article className="division-card" key={division.code}><img className="division-icon" src={division.icon} alt={`${division.name} division icon`} /><span className="division-code">{division.code}</span><span className="corner-mark">↗</span><p className="card-role">{division.role}</p><h3>{division.name}</h3><p>{division.text}</p><a href="#divisions">VIEW CELL <span>→</span></a></article>)}</div></section>
+    <section id="divisions" className="section-pad dark-section reveal"><SectionKicker number="02" label="CAPABILITIES" /><div className="section-heading"><h2>THE <em>EDGE</em> OF THE SPEAR.</h2><a className="text-link" href="#gallery">VIEW FIELD LOG <span>↗</span></a></div><DivisionRail /></section>
 
     <section id="gallery" className="section-pad paper-section reveal"><SectionKicker number="03" label="FIELD ARCHIVE" /><div className="gallery-top"><h2>VISUAL <em>LOG.</em></h2><a className="text-link" href="#gallery">OPEN GALLERY <span>↗</span></a></div><div className="gallery-grid">{galleryItems.map((item, index) => <article className={`gallery-card gallery-${index + 1}`} key={item.title}><div className="gallery-photo" style={{ backgroundImage: `url(${item.image})` }} /><div className="gallery-label"><span>{item.category}</span><b>{item.title}</b><small>{item.meta}</small></div></article>)}</div></section>
 
