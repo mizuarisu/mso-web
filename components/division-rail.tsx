@@ -27,8 +27,12 @@ export function DivisionRail() {
     }
     const onWheel = (event: WheelEvent) => {
       if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return
+      const maxScroll = rail.scrollWidth - rail.clientWidth
+      const nextScroll = rail.scrollLeft + event.deltaY
+      const canScrollRail = nextScroll > 0 && nextScroll < maxScroll
+      if (!canScrollRail) return
       event.preventDefault()
-      rail.scrollLeft += event.deltaY
+      rail.scrollBy({ left: event.deltaY, behavior: 'smooth' })
     }
     rail.addEventListener('scroll', updateActive, { passive: true })
     rail.addEventListener('wheel', onWheel, { passive: false })
