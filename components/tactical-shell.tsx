@@ -9,9 +9,9 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
 
   useEffect(() => {
     if (!showLoader) return
-    const statuses = ['INITIALIZING WEBSITE', 'VERIFYING LINK', 'LOADING ASSETS', 'LOADED.']
+    const statuses = ['INITIALIZING WEBSITE', 'VERIFYING LINK', 'LOADING ASSETS','LOADING FILES','LOADED.','WELCOME.']
     const timers = statuses.map((label, index) => window.setTimeout(() => setStatus(label), index * 560))
-    const timer = window.setTimeout(() => setLoading(false), 3200)
+    const timer = window.setTimeout(() => setLoading(false), 4200)
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add('is-visible')
       else entry.target.classList.remove('is-visible')
@@ -21,7 +21,7 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
   }, [showLoader])
 
   return <SiteLayout>
-    {loading && <div className="tactical-loader" role="status" aria-label="Loading Vanguard archive"><div className="loader-grid" aria-hidden="true" /><div className="loader-frame"><div className="loader-topline"><span>MSO // WEBSITE</span><span>SECURE LINK</span></div><img className="loader-emblem" src="/images/division-emblem.webp" alt="Marine Special Operations emblem" /><div className="loader-status"><span className="loader-status-dot" />{status}</div><div className="loader-progress"><span /><span /><span /><span /><span /><span /></div><div className="loader-progress-line"><i /></div><p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p></div></div>}
+    {loading && <div className="tactical-loader" role="status" aria-label="Loading Vanguard archive"><div className="loader-grid" aria-hidden="true" /><div className="loader-frame"><div className="loader-topline"><span>MSO // WEBSITE</span><span></span></div><img className="loader-emblem" src="/images/division-emblem.webp" alt="Marine Special Operations emblem" /><div className="loader-status"><span className="loader-status-dot" />{status}</div><div className="loader-progress"><span /><span /><span /><span /><span /><span /></div><div className="loader-progress-line"><i /></div><p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p></div></div>}
     <div className="noise" aria-hidden="true" />
     {children}
   </SiteLayout>
