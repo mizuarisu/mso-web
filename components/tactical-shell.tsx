@@ -12,8 +12,8 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
     if (!showLoader) return
     const statuses = ['INITIALIZING WEBSITE', 'VERIFYING LINK', 'LOADING ASSETS','LOADING FILES','LOADED.','WELCOME.']
     const timers = statuses.map((label, index) => window.setTimeout(() => setStatus(label), index * 560))
-    const exitTimer = window.setTimeout(() => setLoaderExiting(true), 3200)
-    const completeTimer = window.setTimeout(() => setLoading(false), 3900)
+    const exitTimer = window.setTimeout(() => setLoaderExiting(true), 4000)
+    const completeTimer = window.setTimeout(() => setLoading(false), 5000)
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add('is-visible')
       else entry.target.classList.remove('is-visible')
