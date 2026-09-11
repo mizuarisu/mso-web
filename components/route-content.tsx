@@ -2,20 +2,20 @@ import Link from 'next/link'
 import { SectionKicker } from './tactical-shell'
 
 export const galleryItems = [
-  { title: 'Night Hawk', category: 'OPERATIONS', meta: 'EXERCISE 24-07', image: '/images/tactical-night.png' },
+  { title: 'Night Hawk', category: 'GFX', meta: '24-07', image: '/images/tactical-night.png' },
   { title: 'Iron Resolve', category: 'TRAINING', meta: 'CAMP RAVEN', image: '/images/tactical-training.png' },
   { title: 'Desert Signal', category: 'FIELD NOTES', meta: 'JOINT TASKING', image: '/images/tactical-desert.png' },
-  { title: 'Black Current', category: 'OPERATIONS', meta: 'ATLANTIC RANGE', image: '/images/tactical-ocean.png' },
-  { title: 'Signal Room', category: 'SIGNALS', meta: 'SECURE CHANNEL', image: '/images/signals-archive.png' },
+  { title: 'Black Current', category: 'FIELD NOTES', meta: 'ATLANTIC RANGE', image: '/images/tactical-ocean.png' },
+  { title: 'Conflict Project', category: 'AFFILIATE', meta: 'PRIVATE CONTRACTOR', image: '/images/signals-archive.png' },
   { title: 'Visual Log', category: 'FIELD NOTES', meta: 'ARCHIVE 06', image: '/images/visual-log-archive.png' },
   { title: 'Briefing Line', category: 'COMMAND', meta: 'CONTROL ROOM', image: '/images/gallery-briefing.png' },
-  { title: 'Night Relay', category: 'SIGNALS', meta: 'RELAY POINT', image: '/images/gallery-signals.png' },
+  { title: 'Tidefall', category: 'FIELD NOTES', meta: 'ATLANTIC', image: '/images/gallery-signals.png' },
 ]
 
 export const divisions = [
-  { code: '01', name: '1ST ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.', icon: '/images/division-assault-1.png' },
-  { code: '02', name: '2ND ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.', icon: '/images/division-assault-2.png' },
-  { code: '03', name: '3RD ASSAULT BRIGADE', role: 'CLANNERS', text: 'Precision assault, special reconnaissance, and mission command in denied environments.', icon: '/images/division-assault-3.png' },
+  { code: '01', name: '1ST ASSAULT BRIGADE', role: 'CLANNERS', text: 'lorem ipsum blah', icon: '/images/division-assault-1.png' },
+  { code: '02', name: '2ND ASSAULT BRIGADE', role: 'CLANNERS', text: 'lorem ipsum blah', icon: '/images/division-assault-2.png' },
+  { code: '03', name: '3RD ASSAULT BRIGADE', role: 'CLANNERS', text: 'lorem ipsum blah', icon: '/images/division-assault-3.png' },
   { code: '04', name: '[REDACTED]', role: 'REDACTED', text: 'INFORMATION CANNOT BE DISTRIBUTED.', icon: '/images/division-redacted.png' },
   { code: '05', name: 'ORLEANS COMPANY', role: 'MILSIM', text: 'Composed primarily of experienced operators to execute advanced operations.', icon: '/images/division-orleans.png' },
   { code: '06', name: 'STALLION COMPANY', role: 'MILSIM', text: 'The primary development company where operators build experience, improve tactical skills, and prepare for more advanced deployments.', icon: '/images/division-stallion.png' },
@@ -24,7 +24,7 @@ export const divisions = [
 
 const updates = [
   ['08.09.26', 'VANGUARD SELECTS NEW RECONNAISSANCE CADRE', 'A new specialist cohort begins the first phase of assessment and field integration.'],
-  ['21.08.26', 'OPERATION NIGHT HAWK // AFTER ACTION', 'A complete visual log from the division’s latest multi-cell exercise.'],
+  ['21.08.26', 'IRON RESOLVE  // AFTER ACTION', 'A joint training between Marine Special Operations & Conflict Project PMC in Camp Raven.'],
   ['04.08.26', 'THE STANDARD: WHY WE TRAIN IN THE DARK', 'A doctrine note on discomfort, clarity, and the discipline behind decisive action.'],
 ]
 
