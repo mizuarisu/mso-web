@@ -34,7 +34,7 @@ button { font: inherit; }
 .command-tier { position: relative; display: grid; gap: 18px; }
 .command-tier-top { width: min(100%, 680px); margin: 0 auto; }
 .command-tier-middle { width: min(100%, 900px); grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 auto; }
-.command-tier-bottom { width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-top: 34px; }
+.command-tier-bottom { width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-top: 34px; height: 150px; }
 .command-tier-middle::before, .command-tier-bottom::before { content: ''; position: absolute; top: -22px; left: 50%; width: 2px; height: 22px; background: var(--red); }
 .command-tier-bottom::after { content: ''; position: absolute; top: 0; left: 12.5%; right: 12.5%; height: 2px; background: var(--red); }
 .command-tier-bottom .command-node::before { content: ''; position: absolute; left: 50%; top: -34px; width: 2px; height: 34px; background: var(--red); }
