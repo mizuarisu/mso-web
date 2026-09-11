@@ -12,8 +12,8 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
     if (!showLoader) return
     const statuses = ['INITIALIZING WEBSITE', 'VERIFYING LINK', 'LOADING ASSETS','LOADING FILES','LOADED.','WELCOME.']
     const timers = statuses.map((label, index) => window.setTimeout(() => setStatus(label), index * 560))
-    const exitTimer = window.setTimeout(() => setLoaderExiting(true), 4200)
-    const completeTimer = window.setTimeout(() => setLoading(false), 4900)
+    const exitTimer = window.setTimeout(() => setLoaderExiting(true), 3200)
+    const completeTimer = window.setTimeout(() => setLoading(false), 3900)
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add('is-visible')
       else entry.target.classList.remove('is-visible')
@@ -23,7 +23,7 @@ export function TacticalShell({ children, showLoader = false }: { children: Reac
   }, [showLoader])
 
   return <SiteLayout>
-    {loading && <div className={`tactical-loader${loaderExiting ? ' is-exiting' : ''}`} role="status" aria-label="Loading Vanguard archive"><div className="loader-grid" aria-hidden="true" /><div className="loader-frame"><div className="loader-topline"><span>MSO // WEBSITE</span><span></span></div><img className="loader-emblem" src="/images/division-emblem.webp" alt="Marine Special Operations emblem" /><div className="loader-status"><span className="loader-status-dot" />{status}</div><div className="loader-progress"><span /><span /><span /><span /><span /><span /></div><div className="loader-progress-line"><i /></div><p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p></div></div>}
+    {loading && <div className={`tactical-loader${loaderExiting ? ' is-exiting' : ''}`} role="status" aria-label="Loading Vanguard archive"><div className="loader-grid" aria-hidden="true" /><div className="loader-frame"><div className={`loader-ring${status === 'LOADED.' ? ' is-active' : ''}`} aria-hidden="true" /><div className="loader-topline"><span>MSO // WEBSITE</span><span></span></div><img className="loader-emblem" src="/images/division-emblem.webp" alt="Marine Special Operations emblem" /><div className="loader-status"><span className="loader-status-dot" />{status}</div><div className="loader-progress"><span /><span /><span /><span /><span /><span /></div><div className="loader-progress-line"><i /></div><p>ESTABLISHING ENCRYPTED CONNECTION <b>OK</b></p></div></div>}
     <div className="noise" aria-hidden="true" />
     <div className={`site-content${loading ? ' is-loading' : ' is-ready'}`}>
       {children}
