@@ -4,9 +4,9 @@ import { DivisionRail } from '@/components/division-rail'
 import { AnimatedCounter } from '@/components/animated-counter'
 
 const updates = [
-  ['08.09.26', 'CONFLICT PROJECT JOINS IN', 'The Special Operations High Command has form a partnership business with the Conflict Project PMC for the future operations.'],
-  ['21.08.26', 'OPERATION IRON HAMMER // AFTER ACTION', 'A full operations between MSO and Conflict Project to assault the following objective.'],
-  ['04.08.26', 'OPERATION MOUNTAIN STORM // AFTER ACTION', 'All objective we’re succsesfully completed. We secured the objective area with zero casualties.'],
+  ['01.09.26', 'CONFLICT PROJECT JOINS IN', 'The Special Operations High Command has form a partnership business with the Conflict Project PMC for the future operations.'],
+  ['05.09.26', 'OPERATION IRON HAMMER // AFTER ACTION', 'A full operations between MSO and Conflict Project to assault the following objective.'],
+  ['07.09.26', 'OPERATION MOUNTAIN STORM // AFTER ACTION', 'A massive assault operations against the Patriot of Democracy on the Ronograd mountains.'],
 ]
 
 async function getRobloxMemberCount() {
